@@ -27,7 +27,18 @@
                 <p>🔹 The more you eat, the longer the snake becomes!</p>
             </div>
 
-            <canvas id="gameCanvas" width="500" height="500"></canvas>
+            <div class="game-area">
+                <canvas id="gameCanvas" width="500" height="500"></canvas>
+
+                <div class="birthday-message" id="birthdayMessage">
+                    <div class="celebration">🎉 🎂 🎉</div>
+                    <div style="font-size: 28px; margin: 15px 0;">🌟 Happy Birthday Mithil! 🌟</div>
+                    <div style="font-size: 18px; margin-top: 10px;">You collected all the cakes! 🎂✨</div>
+                    <div style="font-size: 16px; margin-top: 15px;">🎊 Wishing you a day filled with joy and deliciousness! 🎊</div>
+                    <div style="font-size: 14px; margin-top: 10px;">🎈"DON'T WORRY, YOU'RE NOT OLD YET."-PINOCCHIO🎈</div>
+                    <button type="button" class="play-again-btn" onclick="resetGame()">Play Again</button>
+                </div>
+            </div>
 
             <div class="mobile-controls" aria-label="Snake direction controls">
                 <button type="button" class="direction-btn up" aria-label="Move up" data-direction="up">▲</button>
@@ -59,13 +70,6 @@
                 <button onclick="resetGame()">🔄 Reset</button>
             </div>
 
-            <div class="birthday-message" id="birthdayMessage">
-                <div class="celebration">🎉 🎂 🎉</div>
-                <div style="font-size: 28px; margin: 15px 0;">🌟 Happy Birthday Mithil! 🌟</div>
-                <div style="font-size: 18px; margin-top: 10px;">You collected all the cakes! 🎂✨</div>
-                <div style="font-size: 16px; margin-top: 15px;">🎊 Wishing you a day filled with joy and deliciousness! 🎊</div>
-                <div style="font-size: 14px; margin-top: 10px;">🎈"DON'T WORRY, YOU'RE NOT OLD YET."-PINOCCHIO🎈</div>
-            </div>
         </div>
 
         <div class="about-section">
@@ -201,7 +205,7 @@
         function celebrateBirthday() {
             gameRunning = false;
             clearInterval(gameLoop);
-            document.getElementById('birthdayMessage').style.display = 'block';
+            document.getElementById('birthdayMessage').style.display = 'flex';
             document.getElementById('message').textContent = '🎉 AMAZING! You earned the birthday celebration! 🎉';
             createConfetti();
         }

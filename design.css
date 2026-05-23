@@ -96,6 +96,7 @@
             margin: 0 auto 20px;
             box-shadow: 0 8px 20px rgba(255, 182, 217, 0.3);
             cursor: none;
+            touch-action: none;
         }
 
         .instructions {
@@ -120,6 +121,46 @@
             justify-content: center;
             margin-bottom: 20px;
             flex-wrap: wrap;
+        }
+
+        .mobile-controls {
+            display: none;
+            grid-template-columns: repeat(3, 64px);
+            grid-template-rows: repeat(2, 56px);
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            touch-action: manipulation;
+        }
+
+        .direction-btn {
+            width: 64px;
+            height: 56px;
+            padding: 0;
+            font-size: 24px;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .direction-btn.up {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .direction-btn.left {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .direction-btn.down {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .direction-btn.right {
+            grid-column: 3;
+            grid-row: 2;
         }
 
         button {
@@ -283,5 +324,11 @@
             button {
                 padding: 12px 20px;
                 font-size: 14px;
+            }
+        }
+
+        @media (max-width: 700px), (pointer: coarse) {
+            .mobile-controls {
+                display: grid;
             }
         }
